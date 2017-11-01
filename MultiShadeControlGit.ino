@@ -113,8 +113,7 @@ void loop() {
         return;
       }  //if !client.connect
 
-      //Enter the Somfy command and close the tcp connection 
-      Serial.println(action[Curstate.state]);     
+      //Enter the Somfy command and close the tcp connection      
       client.print(action[Curstate.state]);
       client.stop();
 
