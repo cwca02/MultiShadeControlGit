@@ -1,6 +1,8 @@
 /*
  *  This sketch allows up/down control via Alexa off/on for a number of Somfy shades. This one does it 
  *  over a network using a Global Cache GC-100 and an Urtsi by Somfy.  
+ *  
+ *  Update 10/2/2017 - cwca - Swapped on and off.  I'm swaping action so that ON makes the shades go up, OFF makes them go down
  */
 
 #include <ESP8266WiFi.h>
@@ -96,8 +98,8 @@ void loop() {
       called = 0;
       
       // Devices id's match with the order in which devices were added
-      action[0] = UP[Curstate.device_id];
-      action[1] = DOWN[Curstate.device_id];
+      action[1] = UP[Curstate.device_id];
+      action[0] = DOWN[Curstate.device_id];
       
       //Setup the connection to Somfy via the GC-100>Urtsi link
       // Use WiFiClient class to create TCP connections
